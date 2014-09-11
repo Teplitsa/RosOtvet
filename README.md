@@ -10,3 +10,6 @@ Formidable Multilingual 1.03
 Google Universal Analytics 2.3.4
 Imsanity 2.2.8
 
+Admin access:
+admin/admin
+
