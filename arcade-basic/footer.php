@@ -16,9 +16,10 @@ $bavotasan_theme_options = bavotasan_theme_options();
 				<div class="copyright col-lg-12">
 					<span class="pull-left"><?php printf( __( '%s Лицензия Creative Commons CC-BY-SA. %s %s %s', 'arcade' ), 
                                                 date( 'Y' ), ' <a href="' . home_url() . '">РосОтвет</a>. <br />',
-                                                'Сайт создан в результате сотрудничества <br /><a href="http://svobodainfo.org/">Фонда Свободы Информации</a> и <a href="http://te-st.ru">Теплицы социальных технологий</a>',
+                                                '<strong><a href="http://team29.org/"> Команда 29</a> <a href="mailto:rosotvet@gmail.com">rosotvet@gmail.com</a> </strong>',
                                                 '<br />Исходный дизайн: <a href="https://themes.bavotasan.com/">bavotasan.com</a>'); ?>
                                         </span>
+ 
 					<div class="credit-link pull-right">
 						<?php 
 							wp_nav_menu(array(
@@ -31,9 +32,13 @@ $bavotasan_theme_options = bavotasan_theme_options();
 								'depth'           => 0, 
 							));
 						?>	
+						<!-- teplitsa logo -->
+						<!-- Сайт создан при поддержке специалистов <a href="http://te-st.ru">Теплицы социальных технологий</a> -->
 					</div>
+
 				</div><!-- .col-lg-12 -->
 			</div><!-- .row -->
+
 		</div><!-- #footer-content.container -->
 	</footer><!-- #footer -->
 </div><!-- #page -->

@@ -20,6 +20,95 @@ require( BAVOTASAN_THEME_TEMPLATE . '/library/customizer.php' ); // Functions fo
 require( BAVOTASAN_THEME_TEMPLATE . '/library/preview-pro.php' ); // Functions for preview pro page
 require( BAVOTASAN_THEME_TEMPLATE . '/library/custom-metaboxes.php' ); // Functions for home page alignment
 
+#	get field
+global $REQUEST_FIELD_STATUS;
+$REQUEST_FIELD_STATUS = get_field_object('field_5419d486130ca');
+
+require( BAVOTASAN_THEME_TEMPLATE . '/inc/custom_filters.php' );
+
+global $GLOBAL_SITE_EMAIL_FROM;
+$GLOBAL_SITE_EMAIL_FROM = 'zapros@rosotvet.ru';
+
+require( BAVOTASAN_THEME_TEMPLATE . '/geoip/ipgeobase.php' );
+global $TEST_IPGEO; 
+$TEST_IPGEO = new IPGeoBase();
+
+global $REQUESTS_FILTER;
+
+add_action( 'init', 'ro_init', 0 );
+function ro_init() {
+	
+	$labels = array(
+			'name'               => _x( 'Authorities Info', 'post type general name', 'arcade' ),
+			'singular_name'      => _x( 'Authority Info', 'post type singular name', 'arcade' ),
+			'menu_name'          => _x( 'Authorities Info', 'admin menu', 'arcade' ),
+			'name_admin_bar'     => _x( 'Authority Info', 'add new on admin bar', 'arcade' ),
+			'add_new'            => _x( 'Add Authority Info', 'authority_info', 'arcade' ),
+			'add_new_item'       => __( 'Add Authority Info', 'arcade' ),
+			'new_item'           => __( 'New Authority Info', 'arcade' ),
+			'edit_item'          => __( 'Edit Authority Info', 'arcade' ),
+			'view_item'          => __( 'View Authority Info', 'arcade' ),
+			'all_items'          => __( 'All Authority Info', 'arcade' ),
+			'search_items'       => __( 'Search Authority Info', 'arcade' ),
+			'parent_item_colon'  => __( 'Parent Authority Info:', 'arcade' ),
+			'not_found'          => __( 'No Authority Info found.', 'arcade' ),
+			'not_found_in_trash' => __( 'No Authority Info found in Trash.', 'arcade' )
+	);
+	$args = array(
+			'labels'             => $labels,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'rewrite'            => array( 'slug' => 'authority_info' ),
+			'capability_type'    => 'post',
+			'has_archive'        => true,
+			'hierarchical'       => false,
+			'menu_position'      => null,
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+	);
+	register_post_type( 'authority_info', $args );
+		
+	// Add new taxonomy, NOT hierarchical (like tags)
+	$labels = array(
+			'name'                       => _x( 'Authorities', 'taxonomy general name', 'arcade' ),
+			'singular_name'              => _x( 'Authority', 'taxonomy singular name', 'arcade' ),
+			'search_items'               => __( 'Search Authorities', 'arcade' ),
+			'popular_items'              => __( 'Popular Authorities', 'arcade' ),
+			'all_items'                  => __( 'All Authorities', 'arcade' ),
+			'parent_item'                => __( 'Parent Item', 'arcade' ),
+			'parent_item_colon'          => __( 'Parent Item:', 'arcade' ),
+			'edit_item'                  => __( 'Edit Authority', 'arcade' ),
+			'update_item'                => __( 'Update Authority', 'arcade' ),
+			'add_new_item'               => __( 'Add New Authority', 'arcade' ),
+			'new_item_name'              => __( 'New Authority Name', 'arcade' ),
+			'separate_items_with_commas' => __( 'Separate authorities with commas', 'arcade' ),
+			'add_or_remove_items'        => __( 'Add or remove authorities', 'arcade' ),
+			'choose_from_most_used'      => __( 'Choose from the most used authorities', 'arcade' ),
+			'not_found'                  => __( 'No authorities found.', 'arcade' ),
+			'menu_name'                  => __( 'Authorities', 'arcade' ),
+	);
+	$args = array(
+			'hierarchical'          => true,
+			'labels'                => $labels,
+			'show_ui'               => true,
+			'show_admin_column'     => true,
+			'query_var'             => true,
+	);
+	register_taxonomy( 'authority', array('authority_info', 'post'), $args );
+	
+	global $wp_rewrite;
+	add_rewrite_rule("requests/(answered|sent)/page/(\d+)/?", 'index.php?pagename=requests&req_filter=$matches[1]&paged=$matches[2]', "top");
+	add_rewrite_rule("requests/(answered|sent)/?", 'index.php?pagename=requests&req_filter=$matches[1]', "top");
+}
+
+function add_query_vars($vars) {
+	$vars[] = "req_filter";
+	return $vars;
+}
+add_filter('query_vars', 'add_query_vars');
+
 /**
  * Prepare the content width
  *
@@ -172,16 +261,39 @@ function bavotasan_add_js() {
 	wp_enqueue_script( 'fillsize', BAVOTASAN_THEME_URL .'/library/js/fillsize.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'arctext', BAVOTASAN_THEME_URL .'/library/js/jquery.arctext.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'theme_js', BAVOTASAN_THEME_URL .'/library/js/theme.js', array( 'bootstrap' ), '', true );
-
+	wp_enqueue_script( 'front', BAVOTASAN_THEME_URL .'/js/front.js', array( 'jquery' ), '1.1', true );
+	
+	wp_enqueue_script( 'dropdown.js-js', BAVOTASAN_THEME_URL .'/dropdown.js/jquery.dropdown.js', array( 'jquery', 'bootstrap' ), '1.0', true );
+	wp_enqueue_script( 'bmd-material', BAVOTASAN_THEME_URL .'/bmd/js/material.min.js', array( 'jquery', 'bootstrap' ), '1.0', true );
+	wp_enqueue_script( 'bmd-ripples', BAVOTASAN_THEME_URL .'/bmd/js/ripples.min.js', array( 'jquery', 'bootstrap' ), '1.0', true );
+	
 	$fittext = ( empty( $bavotasan_theme_options['fittext'] ) ) ? '' : $bavotasan_theme_options['fittext'];
 	wp_localize_script( 'theme_js', 'theme_js_vars', array(
 		'arc' => absint( $bavotasan_theme_options['arc'] ),
 		'fittext' => esc_attr( $fittext ),
+		'requests_url' => home_url('/requests/'),
 	) );
 
 	wp_enqueue_style( 'theme_stylesheet', get_stylesheet_uri() );
 	wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Megrim|Raleway|Open+Sans:400,400italic,700,700italic', false, null, 'all' );
 	wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.1.0', 'all' );
+	
+    $url = get_template_directory_uri();
+	
+    #	add dropdown.js styles
+    wp_enqueue_style( 'dropdown.js-css', $url .'/dropdown.js/jquery.dropdown.css', false, '1.0', 'all' );
+    
+    #	add dmb styles
+	wp_enqueue_style( 'bmd-roboto', $url .'/bmd/css/roboto.min.css', false, '1.0', 'all' );
+	wp_enqueue_style( 'bmd-material', $url .'/bmd/css/ro.css', false, '1.1', 'all' );
+	wp_enqueue_style( 'bmd-ripples', $url .'/bmd/css/ripples.min.css', false, '1.0', 'all' );
+	
+	wp_enqueue_style( 'front', $url . '/css/front.css', false, '1.6', 'all' );
+	
+	wp_deregister_style( 'formidable' );
+	
+	wp_deregister_style( 'theme_stylesheet' );
+	wp_enqueue_style( 'theme_stylesheet', $url .'/style.css', false, '4.2.2.006', 'all' );
 }
 endif; // bavotasan_add_js
 
@@ -755,4 +867,344 @@ function tst_content_nav( $nav_id, $query = null ) {
 
 	</nav>
 	<?php
+}
+
+function month_en2ru($date) {
+	$ru_month = array( 'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь' );
+	$en_month = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
+	return str_replace($en_month, $ru_month, $date);
+}
+
+function rosotvet_admin_enqueue_scripts( $hook ) {
+	$url = get_template_directory_uri();
+	wp_enqueue_script( 'rosotvet_admin_script', $url.'/js/admin.js' );
+	
+	wp_enqueue_style( 'rosotvet_admin_style',  $url.'/css/admin.css');	
+	
+    wp_localize_script('rosotvet_admin_script', 'admin_frontend', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+		
+		'lang_mail_request_status_updated_failed' => __('mail_request_status_updated_failed', 'arcade'),
+		'lang_mail_request_status_updated_sent' => __('mail_request_status_updated_sent', 'arcade'),
+		'lang_mail_request_status_updated_confirm' => __('mail_request_status_updated_confirm', 'arcade'),
+	));	
+}
+add_action('admin_enqueue_scripts', 'rosotvet_admin_enqueue_scripts');
+
+#	custom fields manipulations
+function add_request_create_date($post_id) {
+	if ( wp_is_post_revision( $post_id ) ) {
+		return;
+	}	
+	$post_type = get_post_type( $post_id );
+	
+	if ( $post_type == 'post' ) {
+		if(isset($_POST['form_key']) && $_POST['form_key'] == 'a4xzyk') {
+			update_post_meta($post_id, 'request_create_date', get_the_date('', $post_id) . ' ' . get_the_time('G:i:s', $post_id));
+			update_post_meta($post_id, 'request_status', 'new');
+			
+			remove_action( 'save_post', 'add_request_create_date' );
+			
+			$request_body_field_id = 8;
+			$request_body = @$_POST['item_meta'][$request_body_field_id];
+			
+			$request_city_field_id = 89;
+			$request_city = @$_POST['item_meta'][$request_city_field_id];
+			
+			$title = wp_trim_words( $request_body, 5, '' ) . ', ' . $request_city  . ' [' . $post_id . ']';
+			
+			wp_update_post(array(
+				'ID' => $post_id,
+				'post_author' => 3,	#	suvorova
+				'post_title' => $title,
+			));
+			
+			add_action( 'save_post', 'add_request_create_date' );
+		}
+		else {
+			$post_status = get_field('request_status', $post_id);
+			if($post_status == 'sent') {
+				$is_request_sent_email_sent = get_field('request_sent_email_sent', $post_id);
+				if(!$is_request_sent_email_sent) {
+					send_request_sent_email($post_id);
+				}
+			}
+			
+			#	set authority tags for the main request
+			$authority_tags = array();
+			if($rows = get_field('request_official_cycle') ) {
+				foreach($rows as $row) {
+					if($row['request_authority'] && is_array($row['request_authority'])) {
+						$authority_tags = array_merge($authority_tags, $row['request_authority']);
+					}
+					elseif($row['request_authority']) {
+						$authority_tags[] = $row['request_authority'];
+					}
+					if($response_rows = $row['request_response']) {
+						foreach($response_rows as $response_row) {
+							if($response_row['request_response_authority']) {
+								$authority_tags[] = $response_row['request_response_authority'];
+							}
+						}
+					}
+				}
+			}
+			$authority_tags = array_unique($authority_tags);
+			wp_set_post_terms( $post_id, $authority_tags, 'authority' );
+		}
+		update_post_meta($post_id, 'request_id', $post_id);
+	}
+	elseif( $post_type == 'authority_info' ) {
+		$post_status = get_post_status($post_id);
+		if( array_search($post_status, array('draft', 'trash', 'auto-draft')) === false) {
+			$post_title = get_the_title( $post_id );
+			$terms = wp_get_object_terms( $post_id, 'authority' );
+			if(empty($terms)) {
+				$term = wp_insert_term( $post_title, 'authority', array('slug' => ro_sanitize_title($post_title)));
+				if(!is_wp_error($term)) {
+					$term_id = $term['term_id'];
+					wp_set_post_terms( $post_id, array($term_id), 'authority' );
+				}
+			}
+			else {
+				$term = $terms[0];
+				if($term) {
+					wp_update_term( $term->term_id, 'authority', array('name' => $post_title, 'slug' => $term->slug) );
+				}
+			}
+		}
+	}
+}
+add_action( 'save_post', 'add_request_create_date' );
+
+function send_request_sent_email($post_id) {
+	global $GLOBAL_SITE_EMAIL_FROM;
+	$to = trim(get_field('request_email', $post_id));
+	
+	if(!$to) {
+		return false;
+	}
+	
+	$message = __('email_request_sent_message', 'arcade');
+	$link = get_permalink($post_id);
+	$title = get_the_title($post_id);
+	$data = array(
+		'{{request_url}}' => $link,
+		'{{request_title}}' => $title
+	);
+	$message = str_replace(array_keys($data), $data, $message);
+	$message = str_replace("\\", "", $message);
+	$message = nl2br($message);
+	
+	$subject = __('Your request has been sent', 'arcade');
+	
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+	$headers .= 'From: ' . __('RosOtvet', 'arcade') . ' <'.$GLOBAL_SITE_EMAIL_FROM.'>' . "\r\n";
+	mail($to, $subject, $message, $headers);
+	update_post_meta($post_id, 'request_sent_email_sent', true);	
+}
+
+#	custom fields in items list
+add_filter('manage_posts_columns', 'bs_projects_table_head');
+function bs_projects_table_head( $columns ) {
+    $columns['request_status']  = __('Status', 'arcade');
+    return $columns;
+}
+
+add_action( 'manage_posts_custom_column', 'bs_projects_table_content', 10, 2 );
+function bs_projects_table_content( $column_name, $post_id ) {
+	global $REQUEST_FIELD_STATUS;
+    if( $column_name == 'request_status' && $REQUEST_FIELD_STATUS ) {
+		$val = get_field('request_status', $post_id);
+		if(!$val) {
+			$val = 'new';
+		}
+       echo @$REQUEST_FIELD_STATUS['choices'][$val] ? $REQUEST_FIELD_STATUS['choices'][$val] : __('Not set', 'arcade');
+    }
+}
+
+add_action("admin_init", "admin_init");
+function admin_init() {
+	add_meta_box("post_response_delay_data", "post_response_delay_data", "post_request_data", "post");
+}
+ 
+function post_request_data() {
+	global $post;
+	$request_official_cycle = get_field('request_official_cycle');
+	$response_delay_data = array();
+	foreach($request_official_cycle as $index => $request_official) {
+		$request_responses = @$request_official['request_response'];
+		$delay_data = array();
+		if(!is_array($request_responses) || count($request_responses) == 0) {
+			$delta_days = floor((time() - strtotime($request_official['request_send_date'])) / (3600 * 24));
+			$delay_days = $delta_days - 10;
+			if($request_official['request_send_date'] && $delay_days > 0) {									
+				$delay_data['response_delay'] = __('rosotvet_response_delay', 'arcade') . " " . sprintf(_n('%s day', 'days', $delay_days), $delay_days);
+			}
+		}
+		
+		$response_delay_data[] = $delay_data;
+	}	
+	echo "<script>var rosotvet_post_response_delay_data = ".json_encode($response_delay_data).";</script>";
+}
+
+add_filter('wp_mail_from', 'ro_new_mail_from');
+function ro_new_mail_from($old) {
+	global $GLOBAL_SITE_EMAIL_FROM;
+	return $GLOBAL_SITE_EMAIL_FROM;
+}
+
+add_filter('wp_mail_from_name', 'ro_new_mail_from_name');
+function ro_new_mail_from_name($old) {
+	return __('RosOtvet', 'arcade');
+}
+
+function __old_way__get_stats_requests_total_num() {
+	$args = array(
+		'posts_per_page' => 0,
+		'post_type' => 'post',
+		'post_status' => 'publish',
+	);
+	$myquery = new WP_Query($args);
+	return $myquery->found_posts;	
+}
+
+function get_stats_requests_total_num() {
+	global $wpdb;
+	return $wpdb->get_var(
+			"
+			SELECT count(*)
+			FROM $wpdb->postmeta as pm
+			left join $wpdb->posts as p
+			on p.ID = pm.post_id
+			WHERE 
+			p.ID is not null
+			and p.post_type = 'post'
+			and pm.meta_key LIKE 'request_official_cycle_%_request_text'
+			AND pm.meta_value !=  ''			
+			"
+	);
+}
+
+function get_stats_requests_sent_num() {
+	$args = array(
+		'posts_per_page' => 0,
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'meta_key' => 'request_status',
+		'meta_value' => 'sent',
+	);
+	$myquery = new WP_Query($args);
+	return $myquery->found_posts;	
+}
+
+function __old_way__get_stats_requests_answered_num() {
+	$args = array(
+		'posts_per_page' => 0,
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'meta_key' => 'request_status',
+		'meta_value' => 'answered',
+	);
+	$myquery = new WP_Query($args);
+	return $myquery->found_posts;		
+}
+
+function get_stats_requests_answered_num() {
+	global $wpdb;
+	return $wpdb->get_var(
+			"
+				SELECT count(*)
+				FROM $wpdb->postmeta as pm
+				left join $wpdb->posts as p
+				on p.ID = pm.post_id
+				WHERE 
+				p.ID is not null
+				and p.post_type = 'post'
+				and pm.meta_key LIKE  'request_official_cycle_%_request_response_%_request_response_text'
+				AND pm.meta_value !=  ''			
+			"
+	);
+}
+
+function ro_apply_requests_filter($query) {
+	if(!@$query->query_vars['post_type'] || $query->query_vars['post_type'] == 'post') {
+		if($query->query_vars['pagename'] == 'requests' || $query->query_vars['p'] == 'requests') {
+			$filter = get_query_var('req_filter');
+			if($filter == 'answered') {
+				$query->set( 'meta_key', 'request_status' );
+				$query->set( 'meta_value', 'answered' );	
+			}
+			elseif($filter == 'sent') {
+				$query->set( 'meta_key', 'request_status' );
+				$query->set( 'meta_value', 'sent' );	
+			}
+			
+			$region_filter = @$_GET['region_filter'];
+			$city_filter = @$_GET['city_filter'];
+			
+			$location_query_filter = array();
+			if($region_filter) {
+				$location_query_filter[] = array(
+					'key' => 'request_region',
+					'value' => $region_filter,
+				);
+			}
+			if($city_filter) {
+				$location_query_filter[] = array(
+					'key' => 'request_city',
+					'value' => $city_filter,
+				);
+			}
+			
+			if(count($location_query_filter) > 0) {
+				$query->set( 'meta_query', $location_query_filter );
+			}
+		}
+	}
+}
+add_action( 'pre_get_posts', 'ro_apply_requests_filter' ); 
+
+require( BAVOTASAN_THEME_TEMPLATE . '/inc/metabox_mail_status_changed.php' );
+
+
+function ro_request_shortcode( $atts ) {
+	$a = shortcode_atts( array(
+			'id' => 0,
+			'format' => 'short',	# short | full
+	), $atts );
+	
+	$ret = '';
+	if($a['id']) {
+		$the_query = new WP_Query( array(
+			'p' => $a['id'],
+		) );
+		if ( $the_query->have_posts() ) {
+			ob_start();
+				$the_query->the_post();
+				if($a['format'] == 'full') {
+					include("ro_request_view.php");
+				}
+				else {
+					echo "<div class='rosotvet-requests'>";
+					include("ro_request_short.php");
+					echo "</div>";
+				}
+			$ret = ob_get_clean();
+		}
+		wp_reset_postdata();
+	}
+	
+	return $ret;
+}
+add_shortcode( 'ro_request', 'ro_request_shortcode' );
+
+function ro_sanitize_title($title) {
+	if(function_exists('ctl_sanitize_title')) {
+		return ctl_sanitize_title($title);
+	}
+	else {
+		return $title;
+	}
 }

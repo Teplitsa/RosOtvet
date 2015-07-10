@@ -2,770 +2,1112 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arcade Basic v1.0.4.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-08-29 15:25:22+0000\n"
+"POT-Creation-Date: 2015-06-15 23:44+0200\n"
+"PO-Revision-Date: 2015-06-22 17:38+0200\n"
 "Last-Translator: cherniatev <denis.cherniatev@gmail.com>\n"
 "Language-Team: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: CSL v1.x\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Country: RUSSIA\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n"
+"+9)%10>3 ? 2 : 1;\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../../\n"
-"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
 
+# @ arcade
 #: 404.php:15
-#@ arcade
 msgid "404 Error"
 msgstr ""
 
+# @ arcade
 #: 404.php:18
-#@ arcade
 msgid "Sorry. We can't seem to find the page you're looking for."
-msgstr ""
+msgstr "Извините. Запрошенная вами страница не найдена."
 
+# @ arcade
 #: comments.php:29
 #, php-format
-#@ arcade
 msgid "1 comment for &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments for &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
+# @ arcade
 #: comments.php:40
-#@ arcade
 msgid "Comment navigation"
 msgstr ""
 
+# @ arcade
 #: comments.php:41
-#@ arcade
 msgid "&larr; Older Comments"
 msgstr ""
 
+# @ arcade
 #: comments.php:42
-#@ arcade
 msgid "Newer Comments &rarr;"
 msgstr ""
 
+# @ arcade
 #: comments.php:51
-#@ arcade
 msgid "Comments are closed."
 msgstr ""
 
+# @ arcade
 #: content-aside.php:9
-#@ arcade
 msgid "<i class=\"fa fa-asterisk\"></i> Aside"
 msgstr ""
 
-#: content-aside.php:12
-#: content-audio.php:12
-#: content-gallery.php:12
-#: content-image.php:16
-#: content-link.php:12
-#: content-quote.php:12
-#: content-status.php:18
-#: content-video.php:12
-#: content.php:20
-#: page.php:25
-#@ arcade
+# @ arcade
+#: content-aside.php:12 content-audio.php:12 content-gallery.php:12
+#: content-image.php:16 content-link.php:12 content-quote.php:12
+#: content-status.php:18 content-video.php:12 content.php:20 page.php:25
+#: ro_request_view.php:42
 msgid "Read more"
 msgstr ""
 
-#: content-footer.php:10
-#: image.php:51
-#@ arcade
+# @ arcade
+#: content-footer.php:10 image.php:51 single.php:29
 msgid "Pages:"
 msgstr ""
 
-#: content-footer.php:11
-#: functions.php:328
-#: functions.php:351
-#: image.php:52
-#@ arcade
+# @ arcade
+#: content-footer.php:11 functions.php:428 functions.php:451 image.php:52
+#: single.php:30
 msgid "(edit)"
 msgstr "(редактировать)"
 
-#: content-footer.php:12
-#@ arcade
+# @ arcade
+#: content-footer.php:12 index.php:65 ro_request_short.php:21
+#: ro_request_view.php:14 taxonomy-authority.php:100
 msgid "Tags:"
 msgstr "Тэги:"
 
-#: content-header.php:24
+# @ arcade
+#: content-header.php:24 ro_request_view.php:18
 #, php-format
-#@ arcade
 msgid "by %s"
 msgstr "автор %s"
 
-#: content-header.php:25
+# @ arcade
+#: content-header.php:25 ro_request_view.php:19
 #, php-format
-#@ arcade
 msgid "Posts by %s"
 msgstr ""
 
-#: content-header.php:31
-#: index.php:46
-#@ arcade
+# @ arcade
+#: content-header.php:31 index.php:57 ro_request_short.php:15
+#: taxonomy-authority.php:94
 msgid "on"
 msgstr ""
 
+# @ arcade
 #: content-header.php:39
-#@ arcade
 msgid "in"
 msgstr ""
 
+# @ arcade
 #: content-header.php:49
-#@ arcade
 msgid "0 Comments"
 msgstr ""
 
+# @ arcade
 #: content-header.php:49
-#@ arcade
 msgid "1 Comment"
 msgstr ""
 
+# @ arcade
 #: content-header.php:49
-#@ arcade
 msgid "% Comments"
 msgstr ""
 
+# @ arcade
 #: content-link.php:9
-#@ arcade
 msgid "<i class=\"fa fa-link\"></i> Link"
 msgstr ""
 
+# @ arcade
 #: content-none.php:9
-#@ arcade
 msgid "Nothing found"
 msgstr ""
 
+# @ arcade
 #: content-none.php:12
-#@ arcade
 msgid "No results were found. Please try again."
 msgstr ""
 
+# @ arcade
 #: content-status.php:9
-#@ arcade
 msgid "<i class=\"fa fa-plus-square\"></i> Status"
 msgstr ""
 
+# @ arcade
 #: content-status.php:15
 #, php-format
-#@ arcade
 msgid "Posted on %1$s at %2$s"
 msgstr ""
 
+# @ arcade
 #: footer.php:17
 #, php-format
-#@ arcade
 msgid "%s Лицензия Creative Commons CC-BY-SA. %s %s %s"
 msgstr ""
 
-#: front-page.php:81
-#@ arcade
+# @ arcade
+#: front-page.php:121
 msgid "Nothing Found"
 msgstr ""
 
-#: front-page.php:84
+# @ arcade
+#: front-page.php:124
 #, php-format
-#@ arcade
 msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
 msgstr ""
 
-#: functions.php:63
-#@ arcade
+#: functions.php:39
+msgctxt "post type general name"
+msgid "Authorities Info"
+msgstr "Органы власти"
+
+#: functions.php:40
+msgctxt "post type singular name"
+msgid "Authority Info"
+msgstr "Тэг органа власти"
+
+#: functions.php:41
+msgctxt "admin menu"
+msgid "Authorities Info"
+msgstr "Органы власти"
+
+#: functions.php:42
+msgctxt "add new on admin bar"
+msgid "Authority Info"
+msgstr "Тэг органа власти"
+
+#: functions.php:43
+msgctxt "authority_info"
+msgid "Add Authority Info"
+msgstr "Добавить орган власти"
+
+#: functions.php:44
+msgid "Add Authority Info"
+msgstr "Добавить орган власти"
+
+#: functions.php:45
+msgid "New Authority Info"
+msgstr "Новый орган власти"
+
+#: functions.php:46
+msgid "Edit Authority Info"
+msgstr "Редактировать орган власти"
+
+#: functions.php:47
+msgid "View Authority Info"
+msgstr "Просмотр органа власти"
+
+#: functions.php:48
+msgid "All Authority Info"
+msgstr "Все органы власти"
+
+#: functions.php:49
+msgid "Search Authority Info"
+msgstr ""
+
+#: functions.php:50
+msgid "Parent Authority Info:"
+msgstr ""
+
+#: functions.php:51
+msgid "No Authority Info found."
+msgstr "Органов власти не найдено."
+
+#: functions.php:52
+msgid "No Authority Info found in Trash."
+msgstr "Органов власти в корзине не найдено."
+
+#: functions.php:72
+msgctxt "taxonomy general name"
+msgid "Authorities"
+msgstr "Тэги органов власти"
+
+#: functions.php:73
+msgctxt "taxonomy singular name"
+msgid "Authority"
+msgstr "Тэг органа власти"
+
+#: functions.php:74
+msgid "Search Authorities"
+msgstr ""
+
+#: functions.php:75
+msgid "Popular Authorities"
+msgstr ""
+
+#: functions.php:76
+msgid "All Authorities"
+msgstr "Все тэги органов власти"
+
+#: functions.php:77
+msgid "Parent Item"
+msgstr ""
+
+#: functions.php:78
+msgid "Parent Item:"
+msgstr ""
+
+#: functions.php:79
+msgid "Edit Authority"
+msgstr "Редактировать тэг органа власти"
+
+#: functions.php:80
+msgid "Update Authority"
+msgstr "Обновить тэг"
+
+#: functions.php:81
+msgid "Add New Authority"
+msgstr "Добавить тэг органа власти"
+
+#: functions.php:82
+msgid "New Authority Name"
+msgstr "Новый тэг органа власти"
+
+#: functions.php:83
+msgid "Separate authorities with commas"
+msgstr ""
+
+#: functions.php:84
+msgid "Add or remove authorities"
+msgstr "Добавить или удалить тэги органов власти"
+
+#: functions.php:85
+msgid "Choose from the most used authorities"
+msgstr ""
+
+#: functions.php:86
+msgid "No authorities found."
+msgstr "Тэги орагнов власти не найдены"
+
+#: functions.php:87
+msgid "Authorities"
+msgstr "Тэги органов власти"
+
+# @ arcade
+#: functions.php:139
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:88
-#@ arcade
+# @ arcade
+#: functions.php:164
 msgid "Default Header 1"
 msgstr ""
 
-#: functions.php:204
-#@ arcade
+# @ arcade
+#: functions.php:304
 msgid "First Sidebar"
 msgstr ""
 
-#: functions.php:206
-#@ arcade
-msgid "This is the first sidebar. It won't appear on the home page unless you set a static front page."
+# @ arcade
+#: functions.php:306
+msgid ""
+"This is the first sidebar. It won't appear on the home page unless you set a "
+"static front page."
 msgstr ""
 
-#: functions.php:214
-#@ arcade
+# @ arcade
+#: functions.php:314
 msgid "Home Page Top Area"
 msgstr ""
 
-#: functions.php:216
-#@ arcade
-msgid "Area on the home page above the main content. Designed specifically for four Icon & Text widgets. Add at least one widget to make it appear."
+# @ arcade
+#: functions.php:316
+msgid ""
+"Area on the home page above the main content. Designed specifically for four "
+"Icon & Text widgets. Add at least one widget to make it appear."
 msgstr ""
 
-#: functions.php:243
-#@ arcade
+# @ arcade
+#: functions.php:343
 msgid "Posts navigation"
 msgstr ""
 
-#: functions.php:245
-#@ arcade
+# @ arcade
+#: functions.php:345
 msgid "View more &rarr;"
 msgstr ""
 
-#: functions.php:245
-#@ arcade
+# @ arcade
+#: functions.php:345
 msgid "&larr; Older posts"
 msgstr ""
 
-#: functions.php:251
-#@ arcade
+# @ arcade
+#: functions.php:351
 msgid "Back to home &rarr;"
 msgstr ""
 
-#: functions.php:251
-#@ arcade
+# @ arcade
+#: functions.php:351
 msgid "Newer posts &rarr;"
 msgstr ""
 
-#: functions.php:287
+# @ arcade
+#: functions.php:387
 #, php-format
-#@ arcade
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:327
+# @ arcade
+#: functions.php:427
 #, php-format
-#@ arcade
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:332
-#@ arcade
+# @ arcade
+#: functions.php:432
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:351
-#@ arcade
+# @ arcade
+#: functions.php:451
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:394
-#@ arcade
+# @ arcade
+#: functions.php:494
 msgid "Read more &rarr;"
 msgstr ""
 
-#: functions.php:714
-#@ arcade
+# @ arcade
+#: functions.php:814
 msgid "&laquo; prev."
 msgstr "&laquo; Назад"
 
-#: functions.php:715
-#@ arcade
+# @ arcade
+#: functions.php:815
 msgid "next. &raquo;"
 msgstr "Вперед &raquo;"
 
-#: header.php:36
-#@ arcade
+# @ arcade
+#: functions.php:875
+msgid "mail_request_status_updated_failed"
+msgstr "Не удалось отправить уведомление об обновлении статуса запроса."
+
+# @ arcade
+#: functions.php:876
+msgid "mail_request_status_updated_sent"
+msgstr "Уведомление об обновлении статуса отправлено."
+
+# @ arcade
+#: functions.php:877
+msgid "mail_request_status_updated_confirm"
+msgstr "Отправить уведомление об обновлении статуса автору запроса?"
+
+# @ arcade
+#: functions.php:976
+msgid "email_request_sent_message"
+msgstr ""
+"Официальный запрос \\\"{{request_title}}\\\" отправлен.\n"
+"Ссылка на запрос: {{request_url}}"
+
+# @ arcade
+#: functions.php:987
+msgid "Your request has been sent"
+msgstr "[РосОтвет] Ваш запрос отправлен"
+
+# @ arcade
+#: functions.php:991 functions.php:1048
+msgid "RosOtvet"
+msgstr "РосОтвет"
+
+# @ arcade
+#: functions.php:999
+msgid "Status"
+msgstr "Статус"
+
+# @ arcade
+#: functions.php:1011 inc/metabox_mail_status_changed.php:25
+msgid "Not set"
+msgstr "Не установлен"
+
+# @ arcade
+#: functions.php:1031 ro_request_view.php:198
+msgid "rosotvet_response_delay"
+msgstr "Ответ опаздывает на"
+
+# @ default
+#: functions.php:1031 ro_request_view.php:198
+#, php-format
+msgid "%s day"
+msgid_plural "days"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+# @ arcade
+#: header.php:45
 msgid "Main menu"
 msgstr ""
 
-#: header.php:37
-#@ arcade
+# @ arcade
+#: header.php:46
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:64
-#@ arcade
+#: header.php:68
+msgid "Запросов"
+msgstr ""
+
+#: header.php:69
+msgid "Отправлено"
+msgstr ""
+
+#: header.php:70
+msgid "Ответов"
+msgstr ""
+
+# @ arcade
+#: header.php:87
 msgid "Как это работает"
 msgstr ""
 
-#: header.php:65
-#@ arcade
-msgid "Отправь запрос"
+# @ arcade
+#: header.php:88
+msgid "Отправить запрос"
 msgstr ""
 
-#: image.php:58
-#: single.php:17
-#@ arcade
+# @ arcade
+#: image.php:58 single.php:40 single_default.php:17
 msgid "Post navigation"
 msgstr ""
 
+# @ arcade
 #: image.php:59
-#@ arcade
 msgid "&larr; Previous Image"
 msgstr ""
 
+# @ arcade
 #: image.php:60
-#@ arcade
 msgid "Next Image &rarr;"
 msgstr ""
 
-#: library/custom-metaboxes.php:29
-#: library/custom-metaboxes.php:30
-#@ arcade
+# @ arcade
+#: inc/custom_filters.php:20
+msgid "All Statuses"
+msgstr "Все статусы"
+
+# @ arcade
+#: inc/metabox_mail_status_changed.php:6
+msgid "Mail Request Status Updated"
+msgstr "Уведомление об обновлении статуса"
+
+# @ arcade
+#: inc/metabox_mail_status_changed.php:16
+msgid "Send Request Status Updated Mail"
+msgstr "Отправить уведомление"
+
+#: inc/metabox_mail_status_changed.php:32
+msgid "email_request_answered_body"
+msgstr ""
+"Запрос: %s\n"
+"Ссылка: %s\n"
+"Статус запроса: %s\n"
+"\n"
+"Если полученная от органов власти информация оказалась для Вас полезной\n"
+"и помогла решить какие-либо проблемы, пожалуйста, напишите нам на "
+"rosotvet@gmail.com, это очень важно для нас."
+
+# @ arcade
+#: inc/metabox_mail_status_changed.php:38
+msgid "email_request_status_updated_body"
+msgstr ""
+"Запрос: %s\n"
+"Ссылка: %s\n"
+"Статус запроса: %s"
+
+# @ arcade
+#: inc/metabox_mail_status_changed.php:45
+msgid "email_request_status_updated_title"
+msgstr "Статус вашего запроса изменился."
+
+#: index.php:23
+msgid "Все"
+msgstr ""
+
+#: index.php:24
+msgid "Отвеченные"
+msgstr ""
+
+#: index.php:25
+msgid "Ждут ответа"
+msgstr ""
+
+# @ arcade
+#: library/custom-metaboxes.php:29 library/custom-metaboxes.php:30
 msgid "Custom Header Image"
 msgstr ""
 
+# @ arcade
 #: library/custom-metaboxes.php:42
-#@ arcade
 msgid "Set Image"
 msgstr ""
 
+# @ arcade
 #: library/custom-metaboxes.php:42
-#@ arcade
 msgid "Remove Image"
 msgstr ""
 
+# @ arcade
 #: library/custom-metaboxes.php:43
-#@ arcade
-msgid "Set a custom image for the header if you want to use something other than the featured image."
+msgid ""
+"Set a custom image for the header if you want to use something other than "
+"the featured image."
 msgstr ""
 
-#: library/customizer.php:62
-#: library/widgets/widget-image-icon.php:83
-#@ arcade
+# @ arcade
+#: library/customizer.php:62 library/widgets/widget-image-icon.php:83
 msgid "View Icons"
 msgstr ""
 
-#: library/customizer.php:62
-#: library/widgets/widget-image-icon.php:83
-#@ arcade
+# @ arcade
+#: library/customizer.php:62 library/widgets/widget-image-icon.php:83
 msgid "Remove Icon"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:90
-#@ arcade
-msgid "Sidebars do not appear on the home page unless you have set a static front page."
+msgid ""
+"Sidebars do not appear on the home page unless you have set a static front "
+"page."
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:127
-#@ arcade
 msgid "Arc Radius"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:130
-#@ arcade
-msgid "The space and rotation for each letter will be calculated using the arc radius and the width of the site title. Leave blank for no arc."
+msgid ""
+"The space and rotation for each letter will be calculated using the arc "
+"radius and the width of the site title. Leave blank for no arc."
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:141
-#@ arcade
 msgid "Use Fittext for long site title"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:155
-#@ arcade
 msgid "Header Icon"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:162
-#@ arcade
 msgid "Layout"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:174
-#@ arcade
 msgid "Site Width"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:180
-#@ arcade
 msgid "1200px"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:181
-#@ arcade
 msgid "992px"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:206
-#@ arcade
 msgid "Main Content Width"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:222
-#@ arcade
 msgid "Left"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:223
-#@ arcade
 msgid "Right"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:227
-#@ arcade
 msgid "Sidebar Layout"
 msgstr ""
 
-#: library/customizer.php:236
-#: library/widgets/widget-image-icon.php:97
-#@ arcade
+# @ arcade
+#: library/customizer.php:236 library/widgets/widget-image-icon.php:97
 msgid "Default"
 msgstr ""
 
-#: library/customizer.php:237
-#: library/widgets/widget-image-icon.php:98
-#@ arcade
+# @ arcade
+#: library/customizer.php:237 library/widgets/widget-image-icon.php:98
 msgid "Light Blue"
 msgstr ""
 
-#: library/customizer.php:238
-#: library/widgets/widget-image-icon.php:99
-#@ arcade
+# @ arcade
+#: library/customizer.php:238 library/widgets/widget-image-icon.php:99
 msgid "Blue"
 msgstr ""
 
-#: library/customizer.php:239
-#: library/widgets/widget-image-icon.php:100
-#@ arcade
+# @ arcade
+#: library/customizer.php:239 library/widgets/widget-image-icon.php:100
 msgid "Red"
 msgstr ""
 
-#: library/customizer.php:240
-#: library/widgets/widget-image-icon.php:101
-#@ arcade
+# @ arcade
+#: library/customizer.php:240 library/widgets/widget-image-icon.php:101
 msgid "Yellow"
 msgstr ""
 
-#: library/customizer.php:241
-#: library/widgets/widget-image-icon.php:102
-#@ arcade
+# @ arcade
+#: library/customizer.php:241 library/widgets/widget-image-icon.php:102
 msgid "Green"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:246
-#@ arcade
 msgid "Jumbo Headline"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:248
-#@ arcade
-msgid "This section appears below the header image on the home page. To remove it just delete all the content from the Title textarea."
+msgid ""
+"This section appears below the header image on the home page. To remove it "
+"just delete all the content from the Title textarea."
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:259
-#@ arcade
 msgid "Title"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:274
-#@ arcade
 msgid "Text"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:283
-#@ arcade
 msgid "Posts"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:285
-#@ arcade
 msgid "These options do not affect the home page post section."
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:296
-#@ arcade
 msgid "Display Categories"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:310
-#@ arcade
 msgid "Display Author"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:324
-#@ arcade
 msgid "Display Date"
 msgstr ""
 
+# @ arcade
 #: library/customizer.php:338
-#@ arcade
 msgid "Display Comment Count"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:18
-#@ arcade
 msgid "Upgrade to full version"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:18
 #, php-format
-#@ arcade
 msgid "Upgrade %s"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:61
-#@ arcade
-msgid "Take your site to the next level with the full version of <em>Arcade</em>. Check out some of the advanced features that'll give you more control over your site's layout and design."
+msgid ""
+"Take your site to the next level with the full version of <em>Arcade</em>. "
+"Check out some of the advanced features that'll give you more control over "
+"your site's layout and design."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:64
-#@ arcade
 msgid "Features"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:68
-#@ arcade
 msgid "Grid Page Template"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:72
-#@ arcade
 msgid "Line Up Your Posts"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:73
-#@ arcade
-msgid "Why display your posts in a single column when you can take advantage of the included grid page template?"
+msgid ""
+"Why display your posts in a single column when you can take advantage of the "
+"included grid page template?"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:74
-#@ arcade
-msgid "Each post will appear as part of the three columns grid. Use the custom field \"category_name\" to specify which category feeds your grid."
+msgid ""
+"Each post will appear as part of the three columns grid. Use the custom "
+"field \"category_name\" to specify which category feeds your grid."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:79
-#@ arcade
 msgid "Social Menu"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:83
-#@ arcade
 msgid "Let's Get Social!"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:84
-#@ arcade
-msgid "Establish your online presense by letting your visitors join your social network. Help them stay up to date on everything you're doing"
+msgid ""
+"Establish your online presense by letting your visitors join your social "
+"network. Help them stay up to date on everything you're doing"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:85
-#@ arcade
-msgid "Easily add a social menu by creating links to the most popular social media websites."
+msgid ""
+"Easily add a social menu by creating links to the most popular social media "
+"websites."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:90
-#@ arcade
 msgid "Advanced Color Picker"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:94
-#@ arcade
 msgid "So Many Colors to Choose From"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:95
 #, php-format
-#@ arcade
-msgid "Sometimes the default colors just aren't working for you. In %s you can use the advanced color picker to make sure you get the exact colors you want."
+msgid ""
+"Sometimes the default colors just aren't working for you. In %s you can use "
+"the advanced color picker to make sure you get the exact colors you want."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:96
-#@ arcade
-msgid "Easily select one of the eight preset colors or dive even deeper into your customization by using a more specific hex code."
+msgid ""
+"Easily select one of the eight preset colors or dive even deeper into your "
+"customization by using a more specific hex code."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:101
-#@ arcade
 msgid "Google Fonts"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:105
-#@ arcade
 msgid "Over 20 to Choose From"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:106
-#@ arcade
-msgid "Web-safe fonts are a thing of the past, so why not try to spice things up a bit?"
+msgid ""
+"Web-safe fonts are a thing of the past, so why not try to spice things up a "
+"bit?"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:107
-#@ arcade
-msgid "Choose from some of Google Fonts' most popular fonts to improve your site's typeface readability and make things look even more amazing."
+msgid ""
+"Choose from some of Google Fonts' most popular fonts to improve your site's "
+"typeface readability and make things look even more amazing."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:112
-#@ arcade
 msgid "Extended Widgetized Footer"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:116
-#@ arcade
 msgid "Add More Widgets"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:117
-#@ arcade
-msgid "If you need to include more widgets on your site, take advantage of the Extended Footer."
+msgid ""
+"If you need to include more widgets on your site, take advantage of the "
+"Extended Footer."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:118
-#@ arcade
-msgid "Use the Theme Options customizer to set the number of columns you want to appear. You can also customize your site's copyright notice."
+msgid ""
+"Use the Theme Options customizer to set the number of columns you want to "
+"appear. You can also customize your site's copyright notice."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:123
-#@ arcade
 msgid "Even More Theme Options"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:126
-#@ arcade
 msgid "Full Width Posts/Pages"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:127
-#@ arcade
-msgid "Each page/post has an option to remove both sidebars so you can use the full width of your site to display whatever you want."
+msgid ""
+"Each page/post has an option to remove both sidebars so you can use the full "
+"width of your site to display whatever you want."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:130
-#@ arcade
 msgid "Multiple Sidebar Layouts"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:131
-#@ arcade
-msgid "Sometimes one sidebar just isn't enough, so add a second one and place it where you want."
+msgid ""
+"Sometimes one sidebar just isn't enough, so add a second one and place it "
+"where you want."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:137
-#@ arcade
 msgid "Bootstrap Shortcodes"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:138
 #, php-format
-#@ arcade
-msgid "Shortcodes are awesome and easy to use. That's why %s comes with a bunch, like a slideshow carousel, alert boxes and more."
+msgid ""
+"Shortcodes are awesome and easy to use. That's why %s comes with a bunch, "
+"like a slideshow carousel, alert boxes and more."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:141
-#@ arcade
 msgid "Import/Export Tool"
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:142
-#@ arcade
-msgid "Once you've set up your site exactly how you want, you can easily export the Theme Options and Custom CSS for safe keeping."
+msgid ""
+"Once you've set up your site exactly how you want, you can easily export the "
+"Theme Options and Custom CSS for safe keeping."
 msgstr ""
 
+# @ arcade
 #: library/preview-pro.php:147
 #, php-format
-#@ arcade
 msgid "Buy %s Now &rarr;"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:9
-#@ arcade
 msgid "Custom Text Widget with Icon"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:11
-#@ arcade
 msgid "Icon & Text"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:78
-#@ arcade
 msgid "Title:"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:81
-#@ arcade
 msgid "Icon:"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:87
-#@ arcade
 msgid "URL:"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:90
-#@ arcade
 msgid "Button Text:"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:93
-#@ arcade
 msgid "Button & Icon Color:"
 msgstr ""
 
+# @ arcade
 #: library/widgets/widget-image-icon.php:112
-#@ arcade
 msgid "Automatically add paragraphs"
 msgstr ""
 
+#: ro_request_authorities.php:6
+msgid "отправлено в "
+msgstr ""
+
+# @ arcade
+#: ro_request_view.php:69
+msgid "Request sent"
+msgstr "Запрос отправлен"
+
+# @ arcade
+#: ro_request_view.php:71
+msgid "Response received"
+msgstr "Ответ получен"
+
+# @ arcade
+#: ro_request_view.php:73
+msgid "Request processing is in progress"
+msgstr "Запрос обрабатывается администрацией сайта"
+
+#: ro_request_view.php:88
+msgid "Official request block"
+msgstr "Официальный запрос"
+
+#: ro_request_view.php:89
+msgid "Expand request text"
+msgstr "Показать текст запроса"
+
+#: ro_request_view.php:89
+msgid "Collapse request text"
+msgstr "Скрыть текст запроса"
+
+# @ arcade
+#: ro_request_view.php:94
+msgid "Official request text"
+msgstr "Текст официального запроса"
+
+# @ arcade
+#: ro_request_view.php:99
+msgid "Request Date"
+msgstr "Запрос отправлен"
+
+#: ro_request_view.php:110
+msgid "to authority"
+msgstr "в органы власти"
+
+# @ arcade
+#: ro_request_view.php:133
+msgid "Response text"
+msgstr "Текст ответа"
+
+# @ arcade
+#: ro_request_view.php:137
+msgid "Response Date"
+msgstr "Ответ получен"
+
+#: ro_request_view.php:149
+msgid "from authority"
+msgstr "от органа власти"
+
+# @ arcade
+#: ro_request_view.php:176
+msgid "Download response file"
+msgstr "Скачать"
+
+# @ arcade
+#: ro_request_view.php:186
+msgid "Lower comment"
+msgstr "Комментарий юриста относительно полноты ответа"
+
+# @ arcade
+#: ro_request_view.php:215
+msgid "Site administration comment"
+msgstr "Комментарий редакции"
+
+# @ arcade
 #: search.php:19
-#@ arcade
 msgid " search results for"
 msgstr ""
 
+# @ arcade
 #: searchform.php:10
-#@ arcade
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: searchform.php:11
-#@ arcade
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr ""
-
+# @ arcade
 #: sidebar.php:13
-#@ arcade
 msgid "Default Widget"
 msgstr ""
 
+# @ arcade
 #: sidebar.php:14
 #, php-format
-#@ arcade
-msgid "This is just a default widget. It'll disappear as soon as you add your own widgets on the %sWidgets admin page%s."
+msgid ""
+"This is just a default widget. It'll disappear as soon as you add your own "
+"widgets on the %sWidgets admin page%s."
 msgstr ""
 
+# @ arcade
 #: sidebar.php:16
-#@ arcade
 msgid "Below is an example of an unordered list."
 msgstr ""
 
+# @ arcade
 #: sidebar.php:18
-#@ arcade
 msgid "List item one"
 msgstr ""
 
+# @ arcade
 #: sidebar.php:19
-#@ arcade
 msgid "List item two"
 msgstr ""
 
+# @ arcade
 #: sidebar.php:20
-#@ arcade
 msgid "List item three"
 msgstr ""
 
+# @ arcade
 #: sidebar.php:21
-#@ arcade
 msgid "List item four"
 msgstr ""
 
-#: single.php:18
-#, php-format
-#@ arcade
+# @ arcade
+#: single.php:41 single_default.php:18
 msgid "&larr; %title"
 msgstr ""
 
-#: single.php:19
-#, php-format
-#@ arcade
+# @ arcade
+#: single.php:42 single_default.php:19
 msgid "%title &rarr;"
 msgstr ""
 
+#: taxonomy-authority.php:65
+msgid "Authority related problems"
+msgstr "Запросы к этому органу власти"

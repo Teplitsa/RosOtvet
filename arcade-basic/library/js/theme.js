@@ -57,9 +57,9 @@
         $window
             .on( 'resize.title-card', function() {
                 window_width = $window.width();
-//				window_height = ( $( 'body' ).hasClass( 'admin-bar' ) ) ? $window.height() - 32 : $window.height();
+				window_height = ( $( 'body' ).hasClass( 'admin-bar' ) ) ? $window.height() - 32 : $window.height();
 //				window_height = ( $( 'body' ).hasClass( 'admin-bar' ) ) ? 490 + 32 : 490;
-				window_height = 522;
+//				window_height = 522;
 				
 				var min_height_on_mobile = 180;
 				$card.css( 'height', min_height_on_mobile );

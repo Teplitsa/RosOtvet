@@ -26,6 +26,15 @@
 <?php
 $bavotasan_theme_options = bavotasan_theme_options();
 $space_class = '';
+
+global $RO_STATS_REQUESTS_TOTAL_NUM, $RO_STATS_REQUESTS_SENT_NUM, $RO_STATS_REQUESTS_ANSWERED_NUM;
+global $RO_PAGE;
+
+$RO_STATS_REQUESTS_TOTAL_NUM = get_stats_requests_total_num();
+$RO_STATS_REQUESTS_ANSWERED_NUM = get_stats_requests_answered_num();
+#$RO_STATS_REQUESTS_SENT_NUM = get_stats_requests_sent_num();
+$RO_STATS_REQUESTS_SENT_NUM = $RO_STATS_REQUESTS_TOTAL_NUM - $RO_STATS_REQUESTS_ANSWERED_NUM;
+
 ?>
 <body <?php body_class(); ?>>
 
@@ -37,7 +46,7 @@ $space_class = '';
 				<a class="sr-only" href="#primary" title="<?php esc_attr_e( 'Skip to content', 'arcade' ); ?>"><?php _e( 'Skip to content', 'arcade' ); ?></a>
 
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<button type="button" class="navbar-toggle pull-left" style="margin-left:5px;" data-toggle="collapse" data-target=".navbar-collapse">
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
@@ -49,20 +58,26 @@ $space_class = '';
 					$menu_class = ( is_rtl() ) ? ' navbar-right' : '';
 					wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'menu_class' => 'nav navbar-nav' . $menu_class, 'fallback_cb' => 'bavotasan_default_menu', 'depth' => 2 ) );
 					?>
+					
+					<div class="ro-ya-search-form" id="ro-ya-search-form">
+						<div class="ya-site-form ya-site-form_inited_no" onclick="return {'action':'http://rosotvet.ru/search/','arrow':false,'bg':'transparent','fontsize':12,'fg':'#ffffff','language':'ru','logo':'rb','publicname':'Поиск по rosotvet.ru','suggest':true,'target':'_self','tld':'ru','type':2,'usebigdictionary':true,'searchid':2190137,'webopt':false,'websearch':false,'input_fg':'#ffffff','input_bg':'#263238','input_fontStyle':'normal','input_fontWeight':'normal','input_placeholder':'Поиск по сайту','input_placeholderColor':'#ffffff','input_borderColor':'#263238'}"><form action="http://yandex.ru/sitesearch" method="get" target="_self" class="frm-show-form"><input type="hidden" name="searchid" value="2190137"/><input type="hidden" name="l10n" value="ru"/><input type="hidden" name="reqenc" value=""/><input type="search" class="form-control" name="text" value=""/><input type="submit" value="Найти"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+					</div>
+					
 				</div>
+				
 			</nav><!-- #site-navigation -->
-
+			
 			 <div class="title-card-wrapper">
                 <div class="title-card">
     				<div id="site-meta">
 									<?if(is_front_page()):?>
-										<img src="<?=esc_url( home_url( '/wp-content/themes/arcade-basic/library/images/logo3.png' ) )?>" class="logo-block"/>
+										<img src="<?=esc_url( home_url( '/wp-content/themes/arcade-basic/library/images/logo.svg?v=1.001' ) )?>" class="logo-block" onerror="this.onerror=null;this.src=<?=esc_url( home_url( '/wp-content/themes/arcade-basic/library/images/logo3.png' ) )?>"/>
 									<?else:?>
-										<a href="<?=esc_url( home_url( '/' ) )?>" class="logo-block"><img src="<?=esc_url( home_url( '/wp-content/themes/arcade-basic/library/images/logo3.png' ) )?>" /></a>
+										<a href="<?=esc_url( home_url( '/' ) )?>" ><img src="<?=esc_url( home_url( '/wp-content/themes/arcade-basic/library/images/logo.svg' ) )?>"  class="logo-block2" onerror="this.onerror=null;this.src=<?=esc_url( home_url( '/wp-content/themes/arcade-basic/library/images/logo3.png' ) )?>"/></a>
 									<?endif?>
                                     <p class="after-logo-buttons">
 										<a href="#" id="more-site" class="btn btn-default btn-lg"><?php _e( 'Как это работает', 'arcade' ); ?></a>
-                                        <a href="#" id="more-site" class="btn btn-default btn-lg fill-form-link"><?php _e( 'Отправь запрос', 'arcade' ); ?></a>
+                                        <a href="#" id="more-site" class="btn btn-default btn-lg fill-form-link"><?php _e( 'Отправить запрос', 'arcade' ); ?></a>
                                     </p>
     				</div>
 
