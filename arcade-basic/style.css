@@ -7338,7 +7338,7 @@ article .time {
 .entry-meta {
   line-height: 1;
   margin: 10px 0 10px;
-  text-transform: capitalize;
+  text-transform: none;
 }
 .basic .entry-meta {
   font-size: 13px;
@@ -8320,7 +8320,7 @@ ul#social-links li a {
     display: inline-block;
     width: 48px;
     height: 48px;
-	background-image: url("./img/social-icons.png");
+	background-image: url("./img/social-icons-001.png");
 	background-position: 0px 0px;
 	background-repeat:no-repeat;
 }
@@ -8329,24 +8329,37 @@ ul#social-links li a[href *= "vk.com"] {
     background-position: 0px -240px;
 }
 
-ul#social-links li a[href *= "vk.com"]:hover {
-    background-position: 0px -192px;
-}
-
 ul#social-links li a[href *= "twitter.com"] {
     background-position: 0px -48px;
-}
-
-ul#social-links li a[href *= "twitter.com"]:hover {
-    background-position: 0px 0px;
 }
 
 ul#social-links li a[href *= "facebook.com"] {
     background-position: 0px -144px;
 }
 
-ul#social-links li a[href *= "facebook.com"]:hover {
-    background-position: 0px -96px;
+ul#social-links li a[href *= "livejournal.com"] {
+    background-position: 0px -336px;
+}
+
+ul#social-links li {
+	position:relative;
+}
+
+ul#social-links li a:after {
+    content:'\A';
+    position:absolute;
+    width:48px; height:48px;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    opacity:0.2;
+    border-radius: 5px;
+}
+
+ul#social-links li a:hover:after {
+	opacity:0.6;
 }
 
 .main-page-form  {
@@ -8358,6 +8371,13 @@ ul#social-links li a[href *= "facebook.com"]:hover {
     max-width:650px;
     padding:1px 5% 1px 5%;
     width:95%;
+    background-color:#efefef;
+}
+
+.main-form-block .frm-show-form  .form-control {
+	background-color:#ffffff;
+	padding-left:5px;
+	padding-right:5px;
 }
 
 .main-form-block-second {

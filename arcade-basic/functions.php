@@ -217,6 +217,9 @@ function bavotasan_home_page_query( $query ) {
 		$query->set( 'posts_per_page', $show );
 		$query->set( 'offset', $offset );
 	}
+	elseif(is_tax('authority') && !$query->get('post_type')) {
+		$query->set('post_type', 'post');
+	}
 }
 
 add_action( 'wp_head', 'bavotasan_styles' );
@@ -261,7 +264,7 @@ function bavotasan_add_js() {
 	wp_enqueue_script( 'fillsize', BAVOTASAN_THEME_URL .'/library/js/fillsize.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'arctext', BAVOTASAN_THEME_URL .'/library/js/jquery.arctext.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'theme_js', BAVOTASAN_THEME_URL .'/library/js/theme.js', array( 'bootstrap' ), '', true );
-	wp_enqueue_script( 'front', BAVOTASAN_THEME_URL .'/js/front.js', array( 'jquery' ), '1.1', true );
+	wp_enqueue_script( 'front', BAVOTASAN_THEME_URL .'/js/front.js', array( 'jquery' ), '1.003', true );
 	
 	wp_enqueue_script( 'dropdown.js-js', BAVOTASAN_THEME_URL .'/dropdown.js/jquery.dropdown.js', array( 'jquery', 'bootstrap' ), '1.0', true );
 	wp_enqueue_script( 'bmd-material', BAVOTASAN_THEME_URL .'/bmd/js/material.min.js', array( 'jquery', 'bootstrap' ), '1.0', true );
@@ -288,12 +291,12 @@ function bavotasan_add_js() {
 	wp_enqueue_style( 'bmd-material', $url .'/bmd/css/ro.css', false, '1.1', 'all' );
 	wp_enqueue_style( 'bmd-ripples', $url .'/bmd/css/ripples.min.css', false, '1.0', 'all' );
 	
-	wp_enqueue_style( 'front', $url . '/css/front.css', false, '1.6', 'all' );
+	wp_enqueue_style( 'front', $url . '/css/front.css', false, '1.007', 'all' );
 	
 	wp_deregister_style( 'formidable' );
 	
 	wp_deregister_style( 'theme_stylesheet' );
-	wp_enqueue_style( 'theme_stylesheet', $url .'/style.css', false, '4.2.2.006', 'all' );
+	wp_enqueue_style( 'theme_stylesheet', $url .'/style.css', false, '4.2.2.010', 'all' );
 }
 endif; // bavotasan_add_js
 
@@ -1208,3 +1211,9 @@ function ro_sanitize_title($title) {
 		return $title;
 	}
 }
+
+function ro_widget_tag_cloud_args( $args ) {
+	$args['taxonomy'] = array('post_tag', 'authority');
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'ro_widget_tag_cloud_args' );

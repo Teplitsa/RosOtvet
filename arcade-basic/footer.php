@@ -22,16 +22,19 @@ $bavotasan_theme_options = bavotasan_theme_options();
  
 					<div class="credit-link pull-right">
 						<?php 
-							wp_nav_menu(array(
+							$social_links_menu = wp_nav_menu(array(
 								'container'       => 'div',
 								'menu'            => 3,
 								'container_class' => 'social-holder',
 								'menu_class'      => 'cf',
 								'menu_id'         => 'social-links',
-								'echo'            => true,                
+								'echo'            => false,                
 								'depth'           => 0, 
 							));
+							$social_links_menu = str_replace('<a', "<a target='_blank'", $social_links_menu);
+							echo $social_links_menu;							
 						?>	
+						
 						<!-- teplitsa logo -->
 						<!-- Сайт создан при поддержке специалистов <a href="http://te-st.ru">Теплицы социальных технологий</a> -->
 					</div>

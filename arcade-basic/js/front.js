@@ -1,6 +1,24 @@
 jQuery(function(){
 	$ = jQuery;
 	
+	// place focus on first field of question form
+	$('.fill-form-link').click(function(){
+		$('textarea[name="item_meta[8]"]').focus();
+	});
+	
+	$('#menu-menu-1 a[href~="/#send-req"]').click(function(){
+		$('textarea[name="item_meta[8]"]').focus();
+	});
+	
+	if ("onhashchange" in window) {
+		$(window).bind( 'hashchange', function(e) {
+			if(window.location.hash == '#send-req') {
+				$('textarea[name="item_meta[8]"]').focus();
+			}
+		});		
+	}
+	$('textarea[name="item_meta[8]"]').focus();
+	
 	$('.ro-toggle-request-text').click(function(){
 		var request_index = $(this).data('request-index');
 		if($(this).data('expanded') == 0) {

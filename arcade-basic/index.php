@@ -18,12 +18,16 @@ $RO_PAGE = 'REQUESTS_LIST';
 get_header(); ?>
 	<div class="container rosotvet-requests">
 		<div class="row">
-			<ul class="nav nav-pills ro-requests-filters">
-			  <li role="presentation" class="<?if(get_query_var('req_filter') == ''):?>active<?endif?>"><a href="<?=esc_url( home_url( '/requests/' ) )?>" data-filter="all" class="ro-req-filter"><?=__('Все', 'arcade')?>: <?=$RO_STATS_REQUESTS_TOTAL_NUM?></a></li>
-			  <li role="presentation" class="<?if(get_query_var('req_filter') == 'answered'):?>active<?endif?>"><a href="<?=esc_url( home_url( '/requests/answered/' ) )?>" class="ro-req-filter"><?=__('Отвеченные', 'arcade')?>: <?=$RO_STATS_REQUESTS_ANSWERED_NUM?></a></li>
-			  <li role="presentation" class="<?if(get_query_var('req_filter') == 'sent'):?>active<?endif?>"><a href="<?=esc_url( home_url( '/requests/sent/' ) )?>" class="ro-req-filter"><?=__('Ждут ответа', 'arcade')?>: <?=$RO_STATS_REQUESTS_SENT_NUM?></a></li>
-			</ul>		
-		
+			<div class="col-md-12">
+				<ul class="nav nav-pills ro-requests-filters">
+				  <li role="presentation" class="<?if(get_query_var('req_filter') == ''):?>active<?endif?>"><a href="<?=esc_url( home_url( '/requests/' ) )?>" data-filter="all" class="ro-req-filter"><?=__('Все', 'arcade')?>: <?=$RO_STATS_REQUESTS_TOTAL_NUM?></a></li>
+				  <li role="presentation" class="<?if(get_query_var('req_filter') == 'answered'):?>active<?endif?>"><a href="<?=esc_url( home_url( '/requests/answered/' ) )?>" class="ro-req-filter"><?=__('Отвеченные', 'arcade')?>: <?=$RO_STATS_REQUESTS_ANSWERED_NUM?></a></li>
+				  <li role="presentation" class="<?if(get_query_var('req_filter') == 'sent'):?>active<?endif?>"><a href="<?=esc_url( home_url( '/requests/sent/' ) )?>" class="ro-req-filter"><?=__('Ждут ответа', 'arcade')?>: <?=$RO_STATS_REQUESTS_SENT_NUM?></a></li>
+				</ul>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-9">
         	<div id="primary" <?php bavotasan_primary_attr(); ?>>
         		<?php
         		if ( have_posts() ) :
@@ -78,7 +82,11 @@ global $paged;
         		endif;
         		?>
         	</div>
-            <?php get_sidebar(); ?>
+        	
+        	</div>
+        	<div class="col-md-3">
+        		<?php dynamic_sidebar( 'sidebar' ); ?>
+        	</div>
 		</div>
 	</div>
 <?php get_footer();
