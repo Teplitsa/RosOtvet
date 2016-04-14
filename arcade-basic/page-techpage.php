@@ -42,7 +42,7 @@ foreach($posts as $post) {
 	if(!$request_region && !$request_city) {
 		$matches = null;
 		preg_match_all('/.*Населенный пункт:\s*([-а-я. _]+)\s*\(([-а-я. _]+?)\)/ui', get_the_content(), $matches);
-		print_r($matches);
+		
 		echo "<br />";
 		if(@$matches[0][0]) {
 			$request_city = @$matches[1][0];

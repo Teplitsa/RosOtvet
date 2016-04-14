@@ -152,4 +152,4 @@ if($city) {
 	<?
 }
 
-get_footer(); ?>
+get_footer();

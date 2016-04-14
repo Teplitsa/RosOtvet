@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 $RO_CUSTOM_ADMIN_FILTERS_POST_TYPES = array('post');
 
@@ -15,29 +15,17 @@ function ro_admin_data_filter(){
 		$field = $REQUEST_FIELD_STATUS;
 		if($field) {
 			$choices = $field['choices'];
-			?>
-			<select name="ADMIN_RO_FILTER_STATUS">
-			<option value=""><?php _e('All Statuses', 'arcade'); ?></option>
-			<?php
-				$current_v = isset($_GET['ADMIN_RO_FILTER_STATUS']) ? $_GET['ADMIN_RO_FILTER_STATUS'] : '';
-				foreach($choices as $k => $v) {
-					printf(
-						'<option value="%s"%s>%s</option>',
-						$k,
-						$k == $current_v ? ' selected="selected" ' : '',
-						$v
-					);
-				}
-			?>
-			</select>
-        <?php
+			echo '<select name="ADMIN_RO_FILTER_STATUS">';
+			echo '<option value="">'. __('All Statuses', 'arcade') . '</option>';
+			$current_v = isset($_GET['ADMIN_RO_FILTER_STATUS']) ? $_GET['ADMIN_RO_FILTER_STATUS'] : '';
+			foreach($choices as $k => $v) {
+				printf('<option value="%s"%s>%s</option>', $k, $k == $current_v ? ' selected="selected" ' : '', $v);
+			}
+			echo '</select>';
 		}
     }
-?>
-	<script>
-		jQuery('#posts-filter').find('select[name=cat]').remove();
-	</script>
-<?	
+    
+	echo "\n<script>jQuery('#posts-filter').find('select[name=cat]').remove();</script>\n";
 }
 
 add_filter( 'parse_query', 'ro_custom_posts_filter' );
@@ -62,4 +50,3 @@ function ro_custom_posts_filter( $query ){
     }
 }
 
-?>
